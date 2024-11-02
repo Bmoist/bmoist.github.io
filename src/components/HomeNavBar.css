@@ -1,0 +1,89 @@
+.sidebar {
+    position: absolute;
+    right: 20px;
+    /* Adjusted for leftwards shift */
+    /* Adjusted for upward shift */
+    /* Makes the links slightly larger */
+    /* Increased width for larger text */
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    z-index: 10;
+    transition: opacity 0.5s ease, backdrop-filter 0.5s ease;
+    backdrop-filter: blur(0px);
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar-link {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    margin: 10px;
+    cursor: pointer;
+    background-color: #fcfffd;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar-link a {
+    text-decoration: none;
+    color: #333;
+    position: relative;
+
+
+}
+
+hr {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-link:hover {
+    background-color: #cadaccb7;
+    transition: background-color opacity 0.3s ease;
+}
+
+.hidden {
+    opacity: 0;
+    backdrop-filter: blur(10px);
+    z-index: 0;
+    transition: opacity 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+
+
+.sidebar-link.with-lines a::after {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 1px;
+    background-color: #333;
+    transform: translateX(-50%);
+}
+
+/*
+
+.sidebar-link.with-lines a::before {
+    top: -12px;
+}
+
+.sidebar-link.with-lines a::after {
+    bottom: -12px;
+}
+
+.sidebar-link a:hover {
+    color: #007BFF;
+    transform: scale(1.1);
+}
+
+.sidebar-link a:hover::before,
+.sidebar-link a:hover::after {
+    background-color: #007BFF;
+    width: 70px;
+
+} */

@@ -1,22 +1,11 @@
-import { useState } from 'react'
-import './App.css'
+import Home from "./pages/Home";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <h1>Linzan(Lynn) Ye</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
-      <p className="read-the-docs">
-        Under Construction
-      </p>
+      <Home />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
