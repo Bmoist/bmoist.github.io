@@ -171,6 +171,7 @@ const PianoFrame: React.FC<PianoCurveProps> = ({
             style={{
               paddingTop: getPadTop(linePos),
               fontSize: 0.04 * linePos.x2,
+              color: "black",
             }}
           >
             <span>Linzan</span>&nbsp;
