@@ -1,0 +1,59 @@
+.sticky-section {
+    display: flex;
+    justify-content: space-around;
+    /* Evenly distribute the items */
+    position: fixed;
+    /* Fix position */
+    bottom: 0;
+    /* Stick to the bottom */
+    left: 0;
+    /* Align to the left */
+    background-color: rgba(240, 240, 240, 0.8);
+    /* Slightly transparent background */
+    transition: opacity 0.5s ease, backdrop-filter 0.5s ease;
+    /* Smooth transition for opacity and backdrop filter */
+    opacity: 1;
+    /* Default to fully visible */
+    backdrop-filter: blur(0px);
+    /* No blur by default */
+    z-index: 10;
+}
+
+.section-item {
+    display: flex;
+    flex: 1;
+    /* Each item takes equal space */
+    text-align: center;
+    /* Center text */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    /* Padding for the items */
+    cursor: pointer;
+    /* Change cursor to pointer */
+    border: 1px solid #ccc;
+    /* Optional border */
+    background-color: #fcfffd;
+    /* Background color for each item */
+    transition: background-color 0.5s;
+    /* Smooth background color change */
+    z-index: inherit;
+}
+
+.section-item:hover {
+    background-color: #e0e0e0;
+    /* Change color on hover */
+}
+
+.sticky {
+    position: fixed;
+    /* Keep it fixed when sticky */
+}
+
+.hidden {
+    opacity: 0;
+    /* Fade out */
+    backdrop-filter: blur(10px);
+    z-index: 0;
+    /* Apply blur effect */
+}
