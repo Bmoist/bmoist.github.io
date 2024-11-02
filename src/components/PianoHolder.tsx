@@ -30,7 +30,7 @@ const PianoHolder: React.FC<PianoHolderProps> = ({
   return (
     <div
       className={`piano-holder ${isVisible ? "" : "hidden"}`}
-      style={{ height: 0.15 * width, textAlign: "center" }}
+      style={{ height: 0.15 * width, textAlign: "center", color: "black" }}
     >
       <Piano
         noteRange={{ first: 48, last: 83 }}
