@@ -10,6 +10,14 @@
     transition: opacity 0.5s ease;
 }
 
+.hidden {
+    opacity: 0;
+    /* visibility: hidden; */
+    transition: opacity 0.5s ease;
+    /* Optional: keeps the space */
+    /* Alternatively, you can use display: none; */
+}
+
 @keyframes bounce {
 
     0%,

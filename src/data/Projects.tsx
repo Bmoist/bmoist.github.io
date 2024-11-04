@@ -9,20 +9,20 @@ const p1: Project = {
   title: "Masked Exp",
   brief:
     "Infilling piano key striking velocity based on surrounding expressive parameters",
-  link: "/maskexp",
+  link: "/proj/maskexp",
 };
 
 const p2: Project = {
-  id: 1,
+  id: 2,
   img: dummyIcon,
   title: "Chord Sense",
   brief:
     "Embark on a harmonic journey towards a certain chord progression by interacting with transformers",
-  link: "/chordsense",
+  link: "/proj/chordsense",
 };
 
 const p3: Project = {
-  id: 1,
+  id: 3,
   img: et,
   title: "Extraterrestrial Vistor",
   brief:

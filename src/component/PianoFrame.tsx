@@ -29,6 +29,7 @@ interface PianoCurveProps {
   maxScrollThres?: number;
   children?: ReactNode;
   title?: string;
+  id?: string;
 }
 
 function calScrollThres(linePos: LinePos, maxScrollThres: number) {
@@ -91,12 +92,14 @@ const PianoFrame: React.FC<PianoCurveProps> = ({
   maxScrollThres = window.innerWidth / 3,
   children,
   title,
+  id,
 }) => {
   const linePos = useWindowSize();
   const paths = getExtendedPath(linePos, maxScrollThres); // TODO @Bmois write the function to convert linePos
   return (
     <div
       className="piano-frame"
+      id={id}
       style={{
         height: calEndY(linePos, maxScrollThres),
         paddingTop: 0,
@@ -112,8 +115,8 @@ const PianoFrame: React.FC<PianoCurveProps> = ({
             }}
           >
             <span>{title}</span>
-            <hr style={{ width: "50%", margin:"0 auto"}} />
           </p>
+          <hr style={{ width: "50%", margin: "0 auto" }} />
         </div>
       )}
       <ScrollArrow />

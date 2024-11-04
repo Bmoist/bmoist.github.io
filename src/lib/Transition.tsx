@@ -11,7 +11,7 @@ const TransitionWrapper: React.FC<TransitionWrapperProps> = ({ children }) => {
   const location = useLocation();
 
   return (
-    <TransitionGroup>
+    <TransitionGroup id="tr_wrapper">
       <CSSTransition key={location.key} classNames="fade" timeout={300}>
         <div>{children}</div>
       </CSSTransition>

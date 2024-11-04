@@ -1,0 +1,11 @@
+.info {
+    position: absolute;
+    top: 0%;
+    z-index: 3;
+    color: black;
+    text-align: center;
+    top: 24%;
+    left: 31%;
+    transform: translate(-50%, -50%);
+    font-size: 2vw;
+}

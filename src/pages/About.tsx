@@ -3,7 +3,7 @@ import PianoFrame from "../component/PianoFrame";
 const About = () => {
   return (
     <>
-      <PianoFrame />
+      <PianoFrame id="aboutframe" />
     </>
   );
 };
