@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./PianoSections.css"; // Ensure this file has the appropriate styles
+import { Link } from "react-router-dom";
 
 interface PianoSectionProps {
   width?: number; // Accept a width prop
@@ -43,9 +44,15 @@ const PianoSection: React.FC<PianoSectionProps> = ({
           Math.min(window.innerHeight * 0.15, window.innerWidth * 0.16) * 0.2,
       }}
     >
-      <div className="section-item">Projects</div>
-      <div className="section-item">Music</div>
-      <div className="section-item">More About Me</div>
+      <div className="section-item">
+        <Link to="/projects">Projects</Link>
+      </div>
+      <div className="section-item">
+        <Link to="/music">Music</Link>
+      </div>
+      <div className="section-item">
+        <Link to="/about">More About Me</Link>
+      </div>
     </div>
   );
 };

@@ -6,6 +6,13 @@
     color: black;
 }
 
+.title {
+    position: absolute;
+    bottom: 83%;
+    width: 62%;
+    text-align: center;
+}
+
 .full-size {
     position: inherit;
     width: 100%;

@@ -14,11 +14,11 @@ const PianoHolder: React.FC<PianoHolderProps> = ({
 }) => {
   const [isVisible, setIsVisible] = useState<boolean>(visibleThres <= 0); // State to control visibility
   useEffect(() => {
-    lg.info("visiThres", visibleThres, "scrolly", scrollY);
+    lg.debug("visiThres", visibleThres, "scrolly", scrollY);
     const handleChange = () => {
       const scrollY = window.scrollY;
       setIsVisible(scrollY >= visibleThres);
-      lg.info("set visible: ", scrollY >= visibleThres);
+      lg.debug("set visible: ", scrollY >= visibleThres);
     };
     handleChange();
     window.addEventListener("scroll", handleChange);
@@ -42,7 +42,7 @@ const PianoHolder: React.FC<PianoHolderProps> = ({
           return midiNumber;
         }}
       />
-      <span>
+      <span style={{ fontSize: 0.009 * width }}>
         Powered by{" "}
         <a href="https://github.com/kevinsqi/react-piano/tree/master">
           react-piano

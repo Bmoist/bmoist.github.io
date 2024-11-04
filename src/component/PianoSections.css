@@ -45,6 +45,13 @@
     /* Change color on hover */
 }
 
+.section-item a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    width: 100%;
+}
+
 .sticky {
     position: fixed;
     /* Keep it fixed when sticky */
