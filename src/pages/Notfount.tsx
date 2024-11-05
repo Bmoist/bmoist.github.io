@@ -1,6 +1,6 @@
 import "./Notfound.css";
 import PianoFrame from "../component/PianoFrame";
-import { useWindowSize } from "../hooks/WindowSize";
+import { useWindowSize } from "../hooks/Window";
 import HomeNavWrap from "../component/HomeNavWrap";
 
 function Notfound() {

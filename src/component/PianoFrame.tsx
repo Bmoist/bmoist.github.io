@@ -2,7 +2,7 @@ import "./PianoFrame.css";
 import React, { ReactNode } from "react";
 import PianoSection from "./PianoSections";
 import PianoHolder from "./PianoHolder";
-import { useWindowSize, LinePos } from "../hooks/WindowSize";
+import { useWindowSize, LinePos } from "../hooks/Window";
 import ScrollArrow from "./ScrollArrow";
 // import lg from "../logger";
 
@@ -32,9 +32,9 @@ interface PianoCurveProps {
   id?: string;
 }
 
-function calScrollThres(linePos: LinePos, maxScrollThres: number) {
-  const yend = calEndY(linePos, maxScrollThres);
-  return yend - maxScrollThres - window.innerHeight;
+function calScrollThres(linePos: LinePos) {
+  const endY = 1.4 * linePos.x2;
+  return endY - window.innerHeight;
 }
 
 function calEndY(pos: LinePos, scrollThres: number) {
@@ -44,6 +44,7 @@ function calEndY(pos: LinePos, scrollThres: number) {
   const endY = tailY3 + 0.19 * pos.x2;
   return endY;
 }
+
 function getExtendedPath(pos: LinePos, scrollThres: number) {
   const pianoWidth = pos.x2;
   const scaleRatio = pianoWidth / 427;
@@ -187,8 +188,8 @@ const PianoFrame: React.FC<PianoCurveProps> = ({
       </svg>
 
       <PianoSection
-        visibleThres={0 + window.innerHeight * 0.2}
-        scrollThres={calScrollThres(linePos, maxScrollThres)}
+        visibleThres={0 + screen.availHeight * 0.2}
+        scrollThres={calScrollThres(linePos)}
         width={linePos.x2}
       />
       <PianoHolder

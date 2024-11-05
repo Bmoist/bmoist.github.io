@@ -1,4 +1,4 @@
-import { useWindowSize } from "../hooks/WindowSize";
+import { useWindowSize } from "../hooks/Window";
 import { getTitlePosX, getTitlePosY } from "./PianoFrame";
 
 const Brief = () => {
@@ -8,7 +8,7 @@ const Brief = () => {
       style={{
         position: "absolute",
         width: linePos.x2 / 2,
-        top: getTitlePosY(linePos) / 10,
+        top: getTitlePosY(linePos) / 3,
         left: linePos.x2 / 15,
         textAlign: "center",
       }}
@@ -26,7 +26,7 @@ const Brief = () => {
       <p
         style={{
           color: "black",
-          paddingTop: linePos.x2 * 0.03,
+          paddingTop: linePos.x2 * 0.1,
           paddingLeft: 0.06 * linePos.x2,
           paddingRight: 0.06 * linePos.x2,
           display: "grid",

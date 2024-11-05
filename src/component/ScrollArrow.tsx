@@ -13,7 +13,6 @@ function ScrollArrow() {
   };
   const handleScroll = () => {
     setIsVisible(window.scrollY <= 0);
-    lg.info("Set visible:", window.scrollY <= 0);
   };
 
   useEffect(() => {

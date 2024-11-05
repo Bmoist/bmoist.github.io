@@ -38,3 +38,28 @@ export const useWindowSize = () => {
 
   return linePos;
 };
+
+export const useScrollable = (): boolean => {
+  const [isScrollable, setIsScrollable] = useState(false);
+
+  useEffect(() => {
+    const checkIfScrollable = () => {
+      const scrollable =
+        document.documentElement.scrollHeight > window.innerHeight;
+      setIsScrollable(scrollable);
+    };
+
+    // Initial check
+    checkIfScrollable();
+
+    // Optional: Re-check when window resizes
+    window.addEventListener("resize", checkIfScrollable);
+
+    // Clean up event listener
+    return () => {
+      window.removeEventListener("resize", checkIfScrollable);
+    };
+  }, []);
+
+  return isScrollable;
+};

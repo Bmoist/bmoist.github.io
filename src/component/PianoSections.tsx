@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./PianoSections.css"; // Ensure this file has the appropriate styles
 import { Link } from "react-router-dom";
+import lg from "../logger";
 
 interface PianoSectionProps {
   width?: number; // Accept a width prop
@@ -22,6 +23,14 @@ const PianoSection: React.FC<PianoSectionProps> = ({
       setIsSticky(scrollY < scrollThres);
       setIsVisible(
         visibleThres <= scrollY && scrollY < Math.max(1, scrollThres)
+      );
+      lg.info(
+        "visibleThres:",
+        visibleThres,
+        "scrollY",
+        scrollY,
+        "scrollThres:",
+        scrollThres
       );
     };
 
