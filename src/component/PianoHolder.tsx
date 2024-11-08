@@ -1,6 +1,6 @@
 import Piano from "../lib/react-piano/Piano.jsx";
-import { useState, useEffect } from "react";
-import lg from "../logger.js";
+import { useEffect } from "react";
+// import lg from "../logger.js";
 
 interface PianoHolderProps {
   width?: number;

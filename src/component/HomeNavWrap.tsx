@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import HomeNav from "./HomeNavBar";
-import PianoFrame from "./PianoFrame";
+// import PianoFrame from "./PianoFrame";
 
 interface HomeNavWrapProps {
   children: ReactNode;

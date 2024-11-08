@@ -1,4 +1,4 @@
-import TransitionWrapper from "./lib/Transition";
+// import TransitionWrapper from "./lib/Transition";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import HomeRoutes from "./routes/HomeRoutes";

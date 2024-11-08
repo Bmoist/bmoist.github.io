@@ -1,5 +1,5 @@
 import { useWindowSize } from "../hooks/Window";
-import { getTitlePosX, getTitlePosY } from "./PianoFrame";
+import { getTitlePosY } from "./PianoFrame";
 
 const Brief = () => {
   const linePos = useWindowSize();

@@ -1,7 +1,7 @@
-import lg from "../logger";
+// import lg from "../logger";
 import "./ScrollArrow.css";
 import DownArr from "../assets/down.svg";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 function ScrollArrow() {
   const [isScrollable, setIsScrollable] = useState(
