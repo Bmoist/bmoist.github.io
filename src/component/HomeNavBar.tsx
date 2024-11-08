@@ -36,19 +36,47 @@ const HomeNav: React.FC<NavProps> = ({
       <nav>
         <ul>
           <li className="sidebar-link">
-            <Link to="/home">Home</Link>
+            <Link
+              to="/home"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+              Home
+            </Link>
           </li>
           <hr />
           <li className="sidebar-link">
-            <Link to="/about">About</Link>
+            <Link
+              to="/about"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+              About
+            </Link>
           </li>
           <hr />
           <li className="sidebar-link">
-            <Link to="/projects">Projects</Link>
+            <Link
+              to="/projects"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+              Projects
+            </Link>
           </li>
           <hr />
           <li className="sidebar-link">
-            <Link to="/music">Music</Link>
+            <Link
+              to="/music"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+              Music
+            </Link>
           </li>
           <hr />
           <li className="sidebar-link">

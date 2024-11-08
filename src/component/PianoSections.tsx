@@ -54,13 +54,34 @@ const PianoSection: React.FC<PianoSectionProps> = ({
       }}
     >
       <div className="section-item">
-        <Link to="/projects">Projects</Link>
+        <Link
+          to="/projects"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
+          Projects
+        </Link>
       </div>
       <div className="section-item">
-        <Link to="/music">Music</Link>
+        <Link
+          to="/music"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
+          Music
+        </Link>
       </div>
       <div className="section-item">
-        <Link to="/about">More About Me</Link>
+        <Link
+          to="/about"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
+          More About Me
+        </Link>
       </div>
     </div>
   );

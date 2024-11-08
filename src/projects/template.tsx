@@ -12,7 +12,33 @@ const Button: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = ({
   </button>
 );
 
+interface DemoProps {
+  imageSrc: string;
+  audioSrc: string;
+  title: string;
+}
+
+const Demo: React.FC<DemoProps> = ({ imageSrc, audioSrc, title }) => {
+  return (
+    <div className="flex flex-col items-center">
+      <img
+        src={imageSrc}
+        alt={title}
+        className="w-full h-48 object-cover rounded-lg mb-4"
+      />
+      <h3 className="text-lg font-semibold mb-2">{title}</h3>
+      <audio controls src={audioSrc} className="w-full">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  );
+};
 export default function MaskExp() {
+  const demos: DemoProps[] = [
+    { imageSrc: "/demo1.jpg", audioSrc: "/demo1.mp3", title: "Demo 1" },
+    { imageSrc: "/demo2.jpg", audioSrc: "/demo2.mp3", title: "Demo 2" },
+    { imageSrc: "/demo3.jpg", audioSrc: "/demo3.mp3", title: "Demo 3" },
+  ];
   return (
     <div className="min-h-screen bg-white">
       <main className="container mx-auto px-4 py-8">
@@ -125,6 +151,17 @@ export default function MaskExp() {
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat.
             </p>
+          </section>
+          {/* Demo Section */}
+          <section>
+            <h2 className="text-2xl font-bold mb-4">Demos</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {demos.map((demo, index) => (
+                <div key={index} className="min-w-[300px]">
+                  <Demo {...demo} />
+                </div>
+              ))}
+            </div>
           </section>
         </div>
       </main>
