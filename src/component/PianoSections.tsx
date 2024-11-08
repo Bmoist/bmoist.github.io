@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./PianoSections.css"; // Ensure this file has the appropriate styles
+import { Link } from "react-router-dom";
+import lg from "../logger";
 
 interface PianoSectionProps {
   width?: number; // Accept a width prop
@@ -22,6 +24,14 @@ const PianoSection: React.FC<PianoSectionProps> = ({
       setIsVisible(
         visibleThres <= scrollY && scrollY < Math.max(1, scrollThres)
       );
+      lg.info(
+        "visibleThres:",
+        visibleThres,
+        "scrollY",
+        scrollY,
+        "scrollThres:",
+        scrollThres
+      );
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -43,9 +53,36 @@ const PianoSection: React.FC<PianoSectionProps> = ({
           Math.min(window.innerHeight * 0.15, window.innerWidth * 0.16) * 0.2,
       }}
     >
-      <div className="section-item">Projects</div>
-      <div className="section-item">Music</div>
-      <div className="section-item">More About Me</div>
+      <div className="section-item">
+        <Link
+          to="/projects"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
+          Projects
+        </Link>
+      </div>
+      <div className="section-item">
+        <Link
+          to="/music"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
+          Music
+        </Link>
+      </div>
+      <div className="section-item">
+        <Link
+          to="/about"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
+          More About Me
+        </Link>
+      </div>
     </div>
   );
 };

@@ -3,6 +3,14 @@
     width: 100%;
     z-index: 0;
     align-items: center;
+    color: black;
+}
+
+.title {
+    position: absolute;
+    bottom: 80%;
+    width: 62%;
+    text-align: center;
 }
 
 .full-size {

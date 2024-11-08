@@ -1,6 +1,7 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./HomeNavBar.css";
-import { useRimPosition } from "./PianoRim";
+import { useWindowSize } from "../hooks/Window";
 import { useState, useEffect } from "react";
 
 interface NavProps {
@@ -10,7 +11,7 @@ interface NavProps {
 const HomeNav: React.FC<NavProps> = ({
   scrollThres = window.innerHeight * 0.1,
 }) => {
-  const linePos = useRimPosition(0);
+  const linePos = useWindowSize();
   const [isVisible, setIsVisible] = useState<boolean>(true); // State to control visibility
   useEffect(() => {
     const handleScroll = () => {
@@ -35,19 +36,47 @@ const HomeNav: React.FC<NavProps> = ({
       <nav>
         <ul>
           <li className="sidebar-link">
-            <a href="#home">Home</a>
+            <Link
+              to="/home"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+              Home
+            </Link>
           </li>
           <hr />
           <li className="sidebar-link">
-            <a href="#about">About</a>
+            <Link
+              to="/about"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+              About
+            </Link>
           </li>
           <hr />
           <li className="sidebar-link">
-            <a href="#projects">Projects</a>
+            <Link
+              to="/projects"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+              Projects
+            </Link>
           </li>
           <hr />
           <li className="sidebar-link">
-            <a href="#music">Music</a>
+            <Link
+              to="/music"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+              Music
+            </Link>
           </li>
           <hr />
           <li className="sidebar-link">

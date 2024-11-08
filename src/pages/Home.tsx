@@ -1,12 +1,14 @@
 import "./Home.css";
-import PianoFrame from "../components/PianoRim";
-import HomeNav from "../components/HomeNavBar";
+import Brief from "../component/Brief";
+import HomeNav from "../component/HomeNavBar";
+import PianoFrame from "../component/PianoFrame";
 
 function Home() {
   return (
     <>
       <HomeNav />
-      <PianoFrame maxScrollThres={100} />
+      <Brief />
+      <PianoFrame maxScrollThres={window.innerHeight / 2} id="homeframe" />
     </>
   );
 }

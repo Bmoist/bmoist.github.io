@@ -21,6 +21,7 @@
 }
 
 .sidebar-link {
+    display: block;
     font-size: 1.5em;
     text-transform: uppercase;
     margin: 10px;
@@ -30,11 +31,11 @@
 }
 
 .sidebar-link a {
+    display: block;
+    width: 100%;
     text-decoration: none;
     color: #333;
     position: relative;
-
-
 }
 
 hr {
