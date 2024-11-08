@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./HomeNavBar.css";
 import { useWindowSize } from "../hooks/Window";
 import { useState, useEffect } from "react";

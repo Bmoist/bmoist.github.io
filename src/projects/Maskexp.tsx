@@ -4,8 +4,6 @@ import method from "./maskexp/method.png";
 import raw from "./maskexp/raw.png";
 import contextual from "./maskexp/contextual.png";
 
-import accn from "./maskexp/accn.png";
-import hits from "./maskexp/hits.png";
 import metrics from "./maskexp/metrics.png";
 
 import og from "./maskexp/og.png";
