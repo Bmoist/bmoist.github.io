@@ -22,27 +22,19 @@
 .section-item {
     display: flex;
     flex: 1;
-    /* Each item takes equal space */
     text-align: center;
-    /* Center text */
     justify-content: center;
     align-items: center;
     padding: 20px;
-    /* Padding for the items */
     cursor: pointer;
-    /* Change cursor to pointer */
     border: 1px solid #ccc;
-    /* Optional border */
     background-color: #fcfffd;
-    /* Background color for each item */
     transition: background-color 0.5s;
-    /* Smooth background color change */
     z-index: inherit;
 }
 
 .section-item:hover {
     background-color: #e0e0e0;
-    /* Change color on hover */
 }
 
 .section-item a {
@@ -59,8 +51,8 @@
 
 .hidden {
     opacity: 0;
-    /* Fade out */
     backdrop-filter: blur(10px);
+    visibility: hidden;
     z-index: 0;
     /* Apply blur effect */
 }

@@ -1,5 +1,5 @@
 // import TransitionWrapper from "./lib/Transition";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 import HomeRoutes from "./routes/HomeRoutes";
 import ProjectRoutes from "./routes/ProjectRoutes";
@@ -7,7 +7,7 @@ import Notfound from "./pages/Notfount";
 
 function App() {
   return (
-    <Router basename="/bmoist.github.io">
+    <Router basename="/">
       {/* <TransitionWrapper> */}
       <Routes>
         <Route path="/*" element={<HomeRoutes />} />

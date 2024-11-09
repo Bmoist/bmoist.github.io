@@ -53,36 +53,33 @@ const PianoSection: React.FC<PianoSectionProps> = ({
           Math.min(window.innerHeight * 0.15, window.innerWidth * 0.16) * 0.2,
       }}
     >
-      <div className="section-item">
-        <Link
-          to="/projects"
-          onClick={() => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
-        >
-          Projects
-        </Link>
-      </div>
-      <div className="section-item">
-        <Link
-          to="/music"
-          onClick={() => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
-        >
-          Music
-        </Link>
-      </div>
-      <div className="section-item">
-        <Link
-          to="/about"
-          onClick={() => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
-        >
-          More About Me
-        </Link>
-      </div>
+      <Link
+        to="/projects"
+        className="section-item"
+        onClick={() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
+      >
+        Projects
+      </Link>
+      <Link
+        to="/music"
+        className="section-item"
+        onClick={() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
+      >
+        Music
+      </Link>
+      <Link
+        className="section-item"
+        to="/about"
+        onClick={() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
+      >
+        More About Me
+      </Link>
     </div>
   );
 };
