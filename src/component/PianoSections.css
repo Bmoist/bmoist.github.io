@@ -1,21 +1,14 @@
 .sticky-section {
     display: flex;
     justify-content: space-around;
-    /* Evenly distribute the items */
     position: fixed;
-    /* Fix position */
     bottom: 0;
-    /* Stick to the bottom */
     left: 0;
-    /* Align to the left */
     background-color: rgba(240, 240, 240, 0.8);
-    /* Slightly transparent background */
-    transition: opacity 0.5s ease, backdrop-filter 0.5s ease;
-    /* Smooth transition for opacity and backdrop filter */
+    transition: opacity 0.5s ease, backdrop-filter 0.5s ease, visibility 0.5s;
     opacity: 1;
-    /* Default to fully visible */
+    visibility: visible;
     backdrop-filter: blur(0px);
-    /* No blur by default */
     z-index: 10;
 }
 
@@ -28,9 +21,9 @@
     padding: 20px;
     cursor: pointer;
     border: 1px solid #ccc;
-    background-color: #fcfffd;
-    transition: background-color 0.5s;
+    background-color: #ffffff;
     z-index: inherit;
+    transition: opacity 0.5s ease, backdrop-filter 0.5s ease, visibility 0.5s;
 }
 
 .section-item:hover {
@@ -54,5 +47,5 @@
     backdrop-filter: blur(10px);
     visibility: hidden;
     z-index: 0;
-    /* Apply blur effect */
+    animation: hideElement 0s 0.5s forwards; /* Delays hiding */
 }

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./HomeNavBar.css";
 import { useWindowSize } from "../hooks/Window";
 import { useState, useEffect } from "react";
+import cv from "../assets/cv.pdf";
 
 interface NavProps {
   scrollThres?: number;
@@ -80,7 +81,7 @@ const HomeNav: React.FC<NavProps> = ({
           </li>
           <hr />
           <li className="sidebar-link">
-            <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
+            <a href={cv} target="_blank" rel="noopener noreferrer">
               CV
             </a>
           </li>
