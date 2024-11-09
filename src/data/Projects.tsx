@@ -27,7 +27,7 @@ const p3: Project = {
   title: "Extraterrestrial Vistor",
   brief:
     "Algorithmic composition using Nyquist for programming \n Collaborator: Tinke Zhang",
-  link: "/cmp/etvisitor",
+  link: "/proj/etvisitor",
 };
 
 export const projs = [p1, p2, p3];

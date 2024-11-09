@@ -67,30 +67,37 @@ export default function Template() {
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Title Section */}
           <div className="text-center space-y-6">
-            <h1 className="text-4xl md:text-5xl font-bold pb-3">
-              Masked Expressiveness
-            </h1>
+            <h1 className="text-4xl md:text-5xl font-bold pb-3">Title title</h1>
             <span
               className="text-4xl md:text-3xl tracking-tight"
               style={{ color: "black" }}
             >
-              Conditioned Generation of Piano Key Striking Velocity Through
-              Masked Language Modeling
+              Lorem Ipsum
             </span>
 
             {/* Authors */}
             <div className="space-y-2">
               <p className="text-lg text-blue-600">
                 <a href="#" className="hover:underline">
-                  Linzan Ye
+                  First Author
+                </a>
+                <sup>*</sup>,{" "}
+                <a href="#" className="hover:underline">
+                  Second Author
+                </a>
+                <sup>*</sup>,{" "}
+                <a href="#" className="hover:underline">
+                  Third Author
                 </a>
               </p>
-
               <p className="text-lg" style={{ color: "black" }}>
                 University of Rochester
               </p>
               <p className="text-lg font-medium">
                 <a href="http://icamcce.org/">AMCCE</a> 2024
+              </p>
+              <p className="text-sm text-gray-500">
+                <sup>*</sup>Indicates Equal Contribution
               </p>
             </div>
 
