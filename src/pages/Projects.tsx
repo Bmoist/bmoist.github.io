@@ -53,7 +53,7 @@ const Projects: React.FC<ProjectProps> = ({ projects }) => {
   return (
     // <div className="project-frame-container">
     <PianoFrame
-      maxScrollThres={window.innerHeight + containerHeight / 2}
+      maxScrollThres={containerHeight / 3}
       title="Projects"
       id="proj_frame"
       sectionVisibleThres={containerHeight / 1.7}

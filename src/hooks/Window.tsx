@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { throttle } from "lodash";
 
 export interface LinePos {
   x1: number;
@@ -16,7 +17,7 @@ export const useWindowSize = () => {
   });
 
   useEffect(() => {
-    const handleWindowChange = () => {
+    const handleWindowChange = throttle(() => {
       const pianoWidth = Math.min(window.innerWidth, window.screen.width);
       const scrollY = window.scrollY;
       const newX = pianoWidth;
@@ -26,7 +27,7 @@ export const useWindowSize = () => {
         x2: newX,
         y2: window.innerHeight,
       });
-    };
+    }, 50);
 
     window.addEventListener("scroll", handleWindowChange);
     window.addEventListener("resize", handleWindowChange);

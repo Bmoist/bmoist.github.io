@@ -61,10 +61,10 @@ const Music: React.FC<MusicProps> = ({ music }) => {
   }, []);
   return (
     <PianoFrame
-      maxScrollThres={window.innerHeight + containerHeight}
+      maxScrollThres={containerHeight}
       title="Music"
       id="proj_frame"
-      sectionVisibleThres={containerHeight / 1.7}
+      sectionVisibleThres={containerHeight / 1.8}
       disablePiano={
         containerHeight >
         calEndY(linePos, window.innerHeight + containerHeight) / 2
