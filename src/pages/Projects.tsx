@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import PianoFrame from "../component/PianoFrame";
+import PianoFrame, { calEndY } from "../component/PianoFrame";
 import lg from "../logger";
 import "./Projects.css";
 import { Link } from "react-router-dom";
+import { useWindowSize } from "../hooks/Window";
 
 export interface Project {
   id: number;
@@ -21,6 +22,7 @@ const Projects: React.FC<ProjectProps> = ({ projects }) => {
   const [fontSize, setFontSize] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const [containerHeight, setContainerHeight] = useState<number>(0);
+  const linePos = useWindowSize();
 
   useEffect(() => {
     // Function to calculate and update font size based on card width
@@ -41,6 +43,7 @@ const Projects: React.FC<ProjectProps> = ({ projects }) => {
     updateContainerSize();
     window.addEventListener("resize", updateFontSize);
     window.addEventListener("resize", updateContainerSize);
+    console.log("===container height", containerHeight);
     return () => {
       window.removeEventListener("resize", updateFontSize);
       window.removeEventListener("resize", updateContainerSize);
@@ -50,11 +53,16 @@ const Projects: React.FC<ProjectProps> = ({ projects }) => {
   return (
     // <div className="project-frame-container">
     <PianoFrame
-      maxScrollThres={window.innerHeight + containerHeight / 2}
+      maxScrollThres={containerHeight / 3}
       title="Projects"
       id="proj_frame"
+      sectionVisibleThres={containerHeight / 1.7}
+      disablePiano={
+        containerHeight >
+        calEndY(linePos, window.innerHeight + containerHeight) / 2
+      }
     >
-      <div className="project-container">
+      <div className="project-container" ref={containerRef}>
         {projects.map((project) => (
           <Link
             key={project.id}
