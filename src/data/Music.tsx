@@ -1,5 +1,5 @@
 import { MusicInfo } from "../pages/Music";
-import dummyIcon from "./dmy.png";
+// import dummyIcon from "./dmy.png";
 
 import jfcct from "./music/concerto.png";
 import sczo from "./music/scherzo.png";

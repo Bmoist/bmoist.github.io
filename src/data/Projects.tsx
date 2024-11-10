@@ -1,6 +1,6 @@
 import { Project } from "../pages/Projects";
 import maskexp from "./maskexp.png";
-import dummyIcon from "./dmy.png";
+// import dummyIcon from "./dmy.png";
 import et from "./et.png";
 import chordsense from "./chordsense.png";
 

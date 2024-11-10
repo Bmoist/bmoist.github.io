@@ -36,11 +36,6 @@ interface PianoCurveProps {
   sectionVisibleThres?: number;
 }
 
-function calScrollThres(linePos: LinePos) {
-  const endY = 1.4 * linePos.x2;
-  return endY - window.innerHeight;
-}
-
 export function calEndY(pos: LinePos, scrollThres: number) {
   const midY1 = 0.1 * pos.x2;
   const midYShift = Math.min(scrollThres, -Math.min(pos.y1 + midY1, 0)); // Starts shifting once reaching the beginning of the middle section
