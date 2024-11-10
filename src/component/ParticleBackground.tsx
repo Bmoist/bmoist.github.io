@@ -1,9 +1,7 @@
 import React, {
   ReactNode,
   useCallback,
-  useEffect,
   useMemo,
-  useState,
 } from "react";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";

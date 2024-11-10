@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import PianoFrame, { calEndY } from "../component/PianoFrame";
-import lg from "../logger";
+// import lg from "../logger";
 import "./Music.css";
 import { Link } from "react-router-dom";
 import { useWindowSize } from "../hooks/Window";
