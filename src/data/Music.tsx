@@ -124,9 +124,9 @@ const c2: MusicInfo = {
 const c3: MusicInfo = {
   id: "c3",
   img: bkht,
-  title: "Brokenhearted",
+  title: "Gentleness",
   brief: "Composed in 2020 fall. I was sad.",
-  link: "https://youtu.be/hZdDiOWDOqY",
+  link: "https://youtu.be/RfDBy4V73so",
   type: "composition",
 };
 
