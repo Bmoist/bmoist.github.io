@@ -1,7 +1,8 @@
 import { Project } from "../pages/Projects";
-import maskexp from "../assets/maskexp.png";
-import dummyIcon from "../assets/dmy.png";
-import et from "../assets/et.png";
+import maskexp from "./maskexp.png";
+import dummyIcon from "./dmy.png";
+import et from "./et.png";
+import chordsense from "./chordsense.png";
 
 const p1: Project = {
   id: 1,
@@ -14,7 +15,7 @@ const p1: Project = {
 
 const p2: Project = {
   id: 2,
-  img: dummyIcon,
+  img: chordsense,
   title: "Chord Sense",
   brief:
     "Embark on a harmonic journey towards a certain chord progression by interacting with transformers",

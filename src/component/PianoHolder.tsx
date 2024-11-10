@@ -5,11 +5,13 @@ import { useEffect } from "react";
 interface PianoHolderProps {
   width?: number;
   visibleThres?: number;
+  isVisible?: boolean;
 }
 
 const PianoHolder: React.FC<PianoHolderProps> = ({
   width = window.innerWidth,
   visibleThres = window.innerWidth * 0.5,
+  isVisible = true,
 }) => {
   useEffect(() => {
     const handleChange = () => {
@@ -27,16 +29,19 @@ const PianoHolder: React.FC<PianoHolderProps> = ({
       className={`piano-holder`}
       style={{ height: 0.15 * width, textAlign: "center", color: "black" }}
     >
-      <Piano
-        noteRange={{ first: 48, last: 83 }}
-        width={width}
-        playNote={(midiNumber: number) => {
-          return midiNumber;
-        }}
-        stopNote={(midiNumber: number) => {
-          return midiNumber;
-        }}
-      />
+      {isVisible && (
+        <Piano
+          noteRange={{ first: 48, last: 83 }}
+          width={width}
+          playNote={(midiNumber: number) => {
+            return midiNumber;
+          }}
+          stopNote={(midiNumber: number) => {
+            return midiNumber;
+          }}
+        />
+      )}
+
       <span style={{ fontSize: 0.009 * width }}>
         Powered by{" "}
         <a

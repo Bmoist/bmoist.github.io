@@ -19,6 +19,9 @@ interface ProjectProps {
 const Projects: React.FC<ProjectProps> = ({ projects }) => {
   const cardRef = useRef<HTMLDivElement>(null); // Ref to the card div
   const [fontSize, setFontSize] = useState<number>(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [containerHeight, setContainerHeight] = useState<number>(0);
+
   useEffect(() => {
     // Function to calculate and update font size based on card width
     const updateFontSize = () => {
@@ -28,15 +31,26 @@ const Projects: React.FC<ProjectProps> = ({ projects }) => {
         lg.info("cardwidth: ", cardWidth);
       }
     };
+    const updateContainerSize = () => {
+      if (containerRef.current) {
+        const cHeight = containerRef.current.offsetHeight;
+        setContainerHeight(cHeight);
+      }
+    };
     updateFontSize();
+    updateContainerSize();
     window.addEventListener("resize", updateFontSize);
-    return () => window.removeEventListener("resize", updateFontSize);
+    window.addEventListener("resize", updateContainerSize);
+    return () => {
+      window.removeEventListener("resize", updateFontSize);
+      window.removeEventListener("resize", updateContainerSize);
+    };
   }, []);
 
   return (
     // <div className="project-frame-container">
     <PianoFrame
-      maxScrollThres={window.innerHeight * 1.5}
+      maxScrollThres={window.innerHeight + containerHeight / 2}
       title="Projects"
       id="proj_frame"
     >

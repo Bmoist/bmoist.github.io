@@ -15,8 +15,8 @@ const PianoSection: React.FC<PianoSectionProps> = ({
   scrollThres = window.innerWidth,
 }) => {
   const [isSticky, setIsSticky] = useState<boolean>(false);
-  const [isVisible, setIsVisible] = useState<boolean>(visibleThres == 0); // State to control visibility
-
+  const [isVisible, setIsVisible] = useState<boolean>(false); // State to control visibility
+  lg.info("visibleThres: ", visibleThres);
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -33,9 +33,8 @@ const PianoSection: React.FC<PianoSectionProps> = ({
         scrollThres
       );
     };
-
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };

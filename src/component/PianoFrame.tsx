@@ -4,6 +4,7 @@ import PianoSection from "./PianoSections";
 import PianoHolder from "./PianoHolder";
 import { useWindowSize, LinePos } from "../hooks/Window";
 import ScrollArrow from "./ScrollArrow";
+
 // import lg from "../logger";
 
 // piano shape: `
@@ -30,6 +31,9 @@ interface PianoCurveProps {
   children?: ReactNode;
   title?: string;
   id?: string;
+  disableSection?: boolean;
+  disablePiano?: boolean;
+  sectionVisibleThres?: number;
 }
 
 function calScrollThres(linePos: LinePos) {
@@ -37,7 +41,7 @@ function calScrollThres(linePos: LinePos) {
   return endY - window.innerHeight;
 }
 
-function calEndY(pos: LinePos, scrollThres: number) {
+export function calEndY(pos: LinePos, scrollThres: number) {
   const midY1 = 0.1 * pos.x2;
   const midYShift = Math.min(scrollThres, -Math.min(pos.y1 + midY1, 0)); // Starts shifting once reaching the beginning of the middle section
   const tailY3 = 0.93 * pos.x2 + midYShift;
@@ -94,6 +98,9 @@ const PianoFrame: React.FC<PianoCurveProps> = ({
   children,
   title,
   id,
+  disableSection = false,
+  disablePiano = false,
+  sectionVisibleThres = 0 + screen.availHeight * 0.2,
 }) => {
   const linePos = useWindowSize();
   const paths = getExtendedPath(linePos, maxScrollThres); // TODO @Bmois write the function to convert linePos
@@ -186,15 +193,18 @@ const PianoFrame: React.FC<PianoCurveProps> = ({
           />
         </g>
       </svg>
+      {!disableSection && (
+        <PianoSection
+          visibleThres={sectionVisibleThres}
+          scrollThres={maxScrollThres + linePos.x2 * 0.4}
+          width={linePos.x2}
+        />
+      )}
 
-      <PianoSection
-        visibleThres={0 + screen.availHeight * 0.2}
-        scrollThres={calScrollThres(linePos)}
-        width={linePos.x2}
-      />
       <PianoHolder
         width={linePos.x2}
         visibleThres={calEndY(linePos, maxScrollThres) - linePos.y2}
+        isVisible={!disablePiano}
       />
       {children}
     </div>
