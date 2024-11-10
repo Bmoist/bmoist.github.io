@@ -46,15 +46,15 @@ export function calEndY(pos: LinePos, scrollThres: number) {
 
 function getExtendedPath(pos: LinePos, scrollThres: number) {
   const pianoWidth = pos.x2;
-  const scaleRatio = pianoWidth / 427;
   const midY1 = 0.1 * pianoWidth;
-  const midYShift = Math.min(scrollThres, -Math.min(pos.y1 + midY1, 0)); // Starts shifting once reaching the beginning of the middle section
+  const midYShift = scrollThres
+  //  Math.min(scrollThres, -Math.min(pos.y1 + midY1, 0)); // Starts shifting once reaching the beginning of the middle section
 
   const midY2 = 0.48 * pianoWidth + midYShift;
   const tailY1 = 0.79 * pianoWidth + midYShift;
   const tailY2 = 0.63 * pianoWidth + midYShift;
   const tailY3 = 0.93 * pianoWidth + midYShift;
-  const endY = tailY3 + 80 * scaleRatio;
+  const endY = tailY3 + 0.187 * pianoWidth;
   const xCalibrate = 0;
   return {
     baseCurve: `
