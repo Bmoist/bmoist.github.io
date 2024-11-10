@@ -202,8 +202,15 @@ export default function ChordSense() {
           <h2 className="text-2xl font-bold mb-4">Demo</h2>
           <p className="text-gray-600">
             A text-based interactive demo is provided in the{" "}
-            <a style={{ color: "#7e83f8" }}>github repository</a>. The following
-            screenshot provides a glimpse of how it operates.
+            <a
+              href="https://github.com/Bmoist/ChordSense"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#7e83f8" }}
+            >
+              github repository
+            </a>
+            . The following screenshot provides a glimpse of how it operates.
           </p>
           <img src={demo} alt="TUI demo" className="object-cover p-4" />
         </div>
