@@ -52,7 +52,7 @@ export default function EtVisitor() {
 
           {/* Abstract Section - Placeholder */}
           <section className="prose prose-gray max-w-none">
-            <h2 className="text-2xl font-bold pb-1">Brief</h2>
+            <h2 className="text-2xl font-bold pb-1">Rationale</h2>
             <p className="text-gray-600">
               In this project, we experimented with microtonal algorithmic
               composition using {"  "}
@@ -72,7 +72,7 @@ export default function EtVisitor() {
               lines form a tonal interval, they are held steady briefly before
               continuing to ascend or descend, resulting in the zigzag-like
               patterns. In this way, we expect that the music will sound like
-              gradually alternating between consonant and atonal intervals. To
+              gradually alternating between tonal and microtonal intervals. To
               strengthen the consonant feelings during those intervals, we added
               additional frequences that form harmonies together. The latter
               half of the piece is treated similarly, except that the two lines
@@ -80,14 +80,15 @@ export default function EtVisitor() {
               used.
               <br />
               <br />
-              The serene middle section serves as a contrast to the chaos and
-              movements in the previous section. This part is created using a
+              The serene middle section contrasts with the chaotic,
+              movement-filled section before it. This part is created using a
               different algorithm. It takes in two parameters: a list of pitches
-              and the amount of semitone shift. Then, the generated chords are
-              connected through smooth frequency shifts. This section explores
-              the effect of minor semitone shifts on traditional tonal
-              harmonies. For example, one may achieve the effect of "I - ii+++ -
-              ii++ - ii+ - ii - V - I" (1:06), inspired by{" "}
+              and the degree of semitone shift. After generating all the chords
+              in this section through this algorithm, the chords are connected
+              through smooth frequency transitions. This section explores how
+              minor semitone shifts affect tradition tonal harmonies. For
+              example, it can create a progression similar to "I - ii+++ - ii++
+              - ii+ - ii - V - I" (at 1:06), inspired by{" "}
               <a
                 style={{ color: "blue" }}
                 href="https://www.youtube.com/watch?v=l9wINwlgxRU&t=55s&ab_channel=Sevish&start=55"
@@ -97,9 +98,14 @@ export default function EtVisitor() {
               .
               <br />
               <br />
-              As a symbol for the magical quality of this atonal composition, we
-              quoted the famous Hedwig's theme from Harry Potter film series and
-              used it as the introduction, recurring motif, and the coda.
+              As a symbol for the magical quality of this microtonal
+              composition, we incorporated the famous <i>
+                Hedwig's theme
+              </i> from <i>Harry Potter</i> film series. This theme serves as
+              the introduction, a recurring motif, and the coda, creating a
+              symmetrical structure throughout the piece. This symmetry reflects
+              the ordered nature of this algorithmic composition, providing a
+              sense of balance amidst its complexities.
             </p>
           </section>
         </div>

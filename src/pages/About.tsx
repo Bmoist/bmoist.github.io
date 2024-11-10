@@ -1,6 +1,6 @@
 import PianoFrame from "../component/PianoFrame";
 import "./About.css";
-import photo from "../assets/photo_circle.png";
+import photo from "../assets/photo_life_circle.png";
 import { useWindowSize } from "../hooks/Window";
 
 const About = () => {
@@ -32,7 +32,7 @@ const About = () => {
         others. I aim to contribute to developing AI companions that minimize
         the barriers to expressing ourselves.
       </p>
-      <PianoFrame id="aboutframe" />
+      <PianoFrame id="aboutframe" maxScrollThres={0} />
     </>
   );
 };
