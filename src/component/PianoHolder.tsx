@@ -1,5 +1,4 @@
 import Piano from "../lib/react-piano/Piano.jsx";
-import KeyboardShortcuts from "../lib/react-piano/Piano.jsx";
 import { useEffect } from "react";
 import { playNote, stopNote } from "./tones/PianoSampler.js";
 import { createKeyboardShortcuts, HOME_ROW } from "./tmp/reactpiano_fix.js";
