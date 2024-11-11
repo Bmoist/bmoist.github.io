@@ -1,5 +1,7 @@
 import Piano from "../lib/react-piano/Piano.jsx";
 import { useEffect } from "react";
+import { playNote, stopNote } from "./tones/PianoSampler.js";
+import { createKeyboardShortcuts, HOME_ROW } from "./tmp/reactpiano_fix.js";
 // import lg from "../logger.js";
 
 interface PianoHolderProps {
@@ -24,6 +26,20 @@ const PianoHolder: React.FC<PianoHolderProps> = ({
     };
   }, [visibleThres]);
 
+  const config = {
+    instrumentName: "acoustic_grand_piano",
+    noteRange: {
+      first: 48,
+      last: 83,
+    },
+    keyboardShortcutOffset: 10,
+  };
+  const keyboardShortcuts = createKeyboardShortcuts(
+    config.noteRange.first + config.keyboardShortcutOffset,
+    config.noteRange.last + config.keyboardShortcutOffset,
+    HOME_ROW
+  );
+
   return (
     <div
       className={`piano-holder`}
@@ -31,14 +47,12 @@ const PianoHolder: React.FC<PianoHolderProps> = ({
     >
       {isVisible && (
         <Piano
-          noteRange={{ first: 48, last: 83 }}
+          noteRange={config.noteRange}
           width={width}
-          playNote={(midiNumber: number) => {
-            return midiNumber;
-          }}
-          stopNote={(midiNumber: number) => {
-            return midiNumber;
-          }}
+          keyboardShortcuts={keyboardShortcuts}
+          keyboardShortcutOffset={config.keyboardShortcutOffset}
+          playNote={playNote}
+          stopNote={stopNote}
         />
       )}
 

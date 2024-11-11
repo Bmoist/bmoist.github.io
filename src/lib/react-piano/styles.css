@@ -15,8 +15,8 @@
    * Styles of accidental notes (flat or sharp)
    */
   .ReactPiano__Key--accidental {
-    background: #dadada;
-    border: 1px solid #9a7f7f;
+    background: #b2b2b2;
+    border: 1px solid #c1c1c1;
     border-top: 1px solid transparent;
     border-radius: 0 0 4px 4px;
     cursor: pointer;
@@ -32,7 +32,7 @@
    */
   .ReactPiano__Key--natural {
     background: #ffffff;
-    border: 1px solid #000000;
+    border: 1px solid #767676;
     border-radius: 0 0 6px 6px;
     cursor: pointer;
     z-index: 0;
@@ -53,7 +53,7 @@
    * Styles of "active" or pressed-down keys
    */
   .ReactPiano__Key--active {
-    background: #3ac8da;
+    background: #dad7d8;
   }
   
   .ReactPiano__Key--active.ReactPiano__Key--accidental {
@@ -100,7 +100,7 @@
   }
   
   .ReactPiano__NoteLabel--accidental {
-    color: #f8e8d5;
+    color: #ffffff;
     margin-bottom: 3px;
   }
   

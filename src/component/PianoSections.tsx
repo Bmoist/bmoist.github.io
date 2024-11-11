@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./PianoSections.css"; // Ensure this file has the appropriate styles
 import { Link } from "react-router-dom";
-import lg from "../logger";
+// import lg from "../logger";
 
 interface PianoSectionProps {
   width?: number; // Accept a width prop
@@ -16,7 +16,6 @@ const PianoSection: React.FC<PianoSectionProps> = ({
 }) => {
   const [isSticky, setIsSticky] = useState<boolean>(false);
   const [isVisible, setIsVisible] = useState<boolean>(false); // State to control visibility
-  lg.info("visibleThres: ", visibleThres);
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -24,14 +23,14 @@ const PianoSection: React.FC<PianoSectionProps> = ({
       setIsVisible(
         visibleThres <= scrollY && scrollY < Math.max(1, scrollThres)
       );
-      lg.info(
-        "visibleThres:",
-        visibleThres,
-        "scrollY",
-        scrollY,
-        "scrollThres:",
-        scrollThres
-      );
+      // lg.info(
+      //   "visibleThres:",
+      //   visibleThres,
+      //   "scrollY",
+      //   scrollY,
+      //   "scrollThres:",
+      //   scrollThres
+      // );
     };
     handleScroll();
     window.addEventListener("scroll", handleScroll);
