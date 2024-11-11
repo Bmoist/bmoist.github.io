@@ -7,6 +7,7 @@ const reverb = new Tone.Reverb({
   wet: 1, // Wet signal (how much reverb you want)
 }).toDestination();
 const synth = new Tone.Synth().connect(reverb);
+// synth.volume.value = -12;
 
 export const playRandomNote = () => {
   const randomNote = CMScale[Math.floor(Math.random() * CMScale.length)];
