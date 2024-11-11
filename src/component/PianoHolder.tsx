@@ -24,14 +24,27 @@ const PianoHolder: React.FC<PianoHolderProps> = ({
     };
   }, [visibleThres]);
 
+  let state = {
+    config: {
+      instrumentName: 'acoustic_grand_piano',
+      noteRange: {
+        first: 48,
+        last:83,
+      },
+      keyboardShortcutOffset: 0,
+    },
+  };
+
   return (
     <div
       className={`piano-holder`}
       style={{ height: 0.15 * width, textAlign: "center", color: "black" }}
     >
       {isVisible && (
+
+
         <Piano
-          noteRange={{ first: 48, last: 83 }}
+          noteRange={state.config.noteRange}
           width={width}
           playNote={(midiNumber: number) => {
             return midiNumber;
