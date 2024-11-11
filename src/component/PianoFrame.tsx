@@ -4,6 +4,7 @@ import PianoSection from "./PianoSections";
 import PianoHolder from "./PianoHolder";
 import { useWindowSize, LinePos } from "../hooks/Window";
 import ScrollArrow from "./ScrollArrow";
+import { playRandomNote } from "./tones/Play";
 
 // import lg from "../logger";
 
@@ -85,6 +86,11 @@ export function getTitlePosY(linePos: LinePos) {
   return 18 * Math.sqrt(linePos.x2);
 }
 
+function handleClick() {
+  console.log("Test test")
+  playRandomNote();
+}
+
 const PianoFrame: React.FC<PianoCurveProps> = ({
   // glowIntensity = 0.5,
   // animationSpeed = 10,
@@ -123,7 +129,7 @@ const PianoFrame: React.FC<PianoCurveProps> = ({
         </div>
       )}
       <ScrollArrow />
-      <svg className="full-size" style={{}}>
+      <svg className="full-size" onClick={handleClick} style={{}}>
         <defs>
           <linearGradient
             id="elegantGradient"

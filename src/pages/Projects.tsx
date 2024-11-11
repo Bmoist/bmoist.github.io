@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import PianoFrame, { calEndY } from "../component/PianoFrame";
-import lg from "../logger";
 import "./Projects.css";
 import { Link } from "react-router-dom";
 import { useWindowSize } from "../hooks/Window";
@@ -30,7 +29,6 @@ const Projects: React.FC<ProjectProps> = ({ projects }) => {
       if (cardRef.current) {
         const cardWidth = cardRef.current.offsetWidth;
         setFontSize(cardWidth * 0.06);
-        lg.info("cardwidth: ", cardWidth);
       }
     };
     const updateContainerSize = () => {
@@ -43,7 +41,7 @@ const Projects: React.FC<ProjectProps> = ({ projects }) => {
     updateContainerSize();
     window.addEventListener("resize", updateFontSize);
     window.addEventListener("resize", updateContainerSize);
-    console.log("===container height", containerHeight);
+    // console.log("===container height", containerHeight);
     return () => {
       window.removeEventListener("resize", updateFontSize);
       window.removeEventListener("resize", updateContainerSize);

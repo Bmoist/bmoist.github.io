@@ -8,7 +8,7 @@ function Home() {
     <>
       <HomeNav />
       <Brief />
-      <PianoFrame maxScrollThres={window.innerHeight / 3} id="homeframe" />
+      <PianoFrame maxScrollThres={0} id="homeframe" />
     </>
   );
 }

@@ -26,8 +26,8 @@ const ParticleBackground = () => {
           },
         },
         number: {
-          value: 12,
-          limit: 20,
+          value: 25,
+          limit: 100,
         },
         opacity: {
           value: 0.4,
@@ -79,6 +79,7 @@ const ParticleBackground = () => {
           },
           push: {
             quantity: 2,
+            duration: 0.5,
           },
         },
       },
