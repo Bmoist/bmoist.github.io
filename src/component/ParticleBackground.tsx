@@ -1,8 +1,4 @@
-import React, {
-  ReactNode,
-  useCallback,
-  useMemo,
-} from "react";
+import React, { ReactNode, useCallback, useMemo } from "react";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 import { Engine, ISourceOptions } from "tsparticles-engine";
@@ -51,14 +47,19 @@ const ParticleBackground = () => {
           },
         },
         shape: {
-          type: "image",
+          type: ["image", "circle"],
           image: musicalNoteImages.map((src) => ({
             src,
             width: 100,
             height: 100,
           })),
+          circle: {},
+        },
+        color: {
+          value: ["#FF5733", "#33FF57", "#3357FF", "#F3FF33", "#FF33A6"],
         },
       },
+
       interactivity: {
         events: {
           onHover: {
