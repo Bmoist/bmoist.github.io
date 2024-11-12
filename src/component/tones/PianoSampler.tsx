@@ -90,7 +90,7 @@ const sampleUrls: { [key: number]: string } = {
 const reverb = new Tone.Reverb({
   decay: 5,
   preDelay: 0.01,
-  wet: 1,
+  wet: 0.8,
 }).toDestination();
 
 const sampler = new Tone.Sampler({
