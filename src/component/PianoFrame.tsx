@@ -38,17 +38,20 @@ interface PianoCurveProps {
 }
 
 export function calEndY(pos: LinePos, scrollThres: number) {
-  const midY1 = 0.1 * pos.x2;
-  const midYShift = Math.min(scrollThres, -Math.min(pos.y1 + midY1, 0)); // Starts shifting once reaching the beginning of the middle section
-  const tailY3 = 0.93 * pos.x2 + midYShift;
-  const endY = tailY3 + 0.19 * pos.x2;
-  return endY;
+  return pos.x2 * 1.1 + scrollThres;
+  // const midY1 = 0.1 * pos.x2;
+  // const midYShift = Math.min(scrollThres, -Math.min(pos.y1 + midY1, 0)); // Starts shifting once reaching the beginning of the middle section
+  // // const midYShift = scrollThres /12;
+  // const tailY3 = 0.93 * pos.x2 + midYShift;
+  // const endY = tailY3 + 0.19 * pos.x2;
+  // console.log("calendy is bad", endY, scrollThres);
+  // return endY;
 }
 
 function getExtendedPath(pos: LinePos, scrollThres: number) {
   const pianoWidth = pos.x2;
   const midY1 = 0.1 * pianoWidth;
-  const midYShift = scrollThres
+  const midYShift = scrollThres;
   //  Math.min(scrollThres, -Math.min(pos.y1 + midY1, 0)); // Starts shifting once reaching the beginning of the middle section
 
   const midY2 = 0.48 * pianoWidth + midYShift;
@@ -83,11 +86,12 @@ export function getTitlePosX(linePos: LinePos) {
 }
 
 export function getTitlePosY(linePos: LinePos) {
-  return 18 * Math.sqrt(linePos.x2);
+  return linePos.x2 / 6
+  // return 18 * Math.sqrt(linePos.x2);
 }
 
 function handleClick() {
-  console.log("Test test")
+  console.log("Test test");
   playRandomNote();
 }
 
@@ -118,7 +122,7 @@ const PianoFrame: React.FC<PianoCurveProps> = ({
         <div className="title">
           <p
             style={{
-              paddingTop: getTitlePosY(linePos) / 2,
+              paddingTop: getTitlePosY(linePos),
               fontSize: 0.04 * linePos.x2,
               color: "black",
             }}

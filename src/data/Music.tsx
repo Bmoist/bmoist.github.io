@@ -165,7 +165,7 @@ const c7: MusicInfo = {
   img: pfcbh,
   title: "Pieces for clarinet, bassoon, and harp",
   brief:
-    "Composed in 2020 summer. I fell in love with the sound of a bassoon during that time, and was inspired to explore this sound through composition.",
+    "Composed in 2020 summer. I fell in love with the sound of bassoon during that time, and was inspired to explore this sound in my composition.",
   link: "https://www.bilibili.com/video/BV1Ep4y1S7GD/",
   type: "composition",
 };

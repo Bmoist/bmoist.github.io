@@ -8,7 +8,7 @@ const Brief = () => {
       style={{
         position: "absolute",
         width: linePos.x2 / 2,
-        top: getTitlePosY(linePos) / 3,
+        top: getTitlePosY(linePos),
         left: linePos.x2 / 15,
         textAlign: "center",
       }}
