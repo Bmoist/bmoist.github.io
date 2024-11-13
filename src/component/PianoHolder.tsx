@@ -46,26 +46,27 @@ const PianoHolder: React.FC<PianoHolderProps> = ({
       style={{ height: 0.15 * width, textAlign: "center", color: "black" }}
     >
       {isVisible && (
-        <Piano
-          noteRange={config.noteRange}
-          width={width}
-          keyboardShortcuts={keyboardShortcuts}
-          keyboardShortcutOffset={config.keyboardShortcutOffset}
-          playNote={playNote}
-          stopNote={stopNote}
-        />
+        <>
+          <Piano
+            noteRange={config.noteRange}
+            width={width}
+            keyboardShortcuts={keyboardShortcuts}
+            keyboardShortcutOffset={config.keyboardShortcutOffset}
+            playNote={playNote}
+            stopNote={stopNote}
+          />
+          <span style={{ fontSize: 0.009 * width }}>
+            Powered by{" "}
+            <a
+              href="https://github.com/kevinsqi/react-piano/tree/master"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              react-piano
+            </a>
+          </span>
+        </>
       )}
-
-      <span style={{ fontSize: 0.009 * width }}>
-        Powered by{" "}
-        <a
-          href="https://github.com/kevinsqi/react-piano/tree/master"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          react-piano
-        </a>
-      </span>
     </div>
   );
 };
