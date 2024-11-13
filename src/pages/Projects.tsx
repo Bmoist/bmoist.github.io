@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import PianoFrame, { calEndY } from "../component/PianoFrame";
+import PianoFrame from "../component/PianoFrame";
 import "./Projects.css";
 import { Link } from "react-router-dom";
 import { useWindowSize } from "../hooks/Window";
@@ -55,10 +55,6 @@ const Projects: React.FC<ProjectProps> = ({ projects }) => {
       title="Projects"
       id="proj_frame"
       sectionVisibleThres={containerHeight / 1.7}
-      // disablePiano={
-      //   containerHeight >
-      //   calEndY(linePos, window.innerHeight + containerHeight)
-      // }
     >
       <div
         className="project-container"

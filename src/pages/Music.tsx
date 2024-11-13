@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import PianoFrame, { calEndY } from "../component/PianoFrame";
+import PianoFrame from "../component/PianoFrame";
 // import lg from "../logger";
 import "./Music.css";
 import { Link } from "react-router-dom";
@@ -61,14 +61,10 @@ const Music: React.FC<MusicProps> = ({ music }) => {
   }, []);
   return (
     <PianoFrame
-      maxScrollThres={containerHeight }
+      maxScrollThres={containerHeight}
       title="Music"
       id="proj_frame"
       sectionVisibleThres={containerHeight / 1.8}
-      // disablePiano={
-      //   containerHeight >
-      //   calEndY(linePos, window.innerHeight + containerHeight) / 2
-      // }
     >
       {/* Filter Component */}
       <div
@@ -114,7 +110,7 @@ const Music: React.FC<MusicProps> = ({ music }) => {
       <div
         className="music-container"
         ref={containerRef}
-        style={{ top: linePos.x2 * 0.3}}
+        style={{ top: linePos.x2 * 0.3 }}
       >
         {filteredMusic.map((mur) => (
           <Link
