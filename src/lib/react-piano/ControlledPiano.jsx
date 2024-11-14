@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import difference from "lodash.difference";
 import Keyboard from "./Keyboard";
-import "./styles.css"
+import "./styles.css";
 
 class ControlledPiano extends React.Component {
   static propTypes = {
@@ -41,7 +41,7 @@ class ControlledPiano extends React.Component {
             "ReactPiano__NoteLabel--natural": !isAccidental,
           })}
         >
-          {keyboardShortcut}
+          {keyboardShortcut == "Backspace" ? "del" : keyboardShortcut}
         </div>
       ) : null,
   };
@@ -105,6 +105,7 @@ class ControlledPiano extends React.Component {
   };
 
   onKeyDown = (event) => {
+    // console.log(event.key);
     // Don't conflict with existing combinations like ctrl + t
     if (event.ctrlKey || event.metaKey || event.shiftKey) {
       return;

@@ -1,7 +1,13 @@
-import React, { ReactNode, useCallback, useMemo } from "react";
+import React, {
+  ReactNode,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+} from "react";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
-import { Engine, ISourceOptions } from "tsparticles-engine";
+import { Container, Engine, ISourceOptions } from "tsparticles-engine";
 
 import eth from "../assets/particles/8th.png";
 import sxth from "../assets/particles/16th.png";
@@ -9,6 +15,7 @@ import qt from "../assets/particles/quarter.png";
 import rest from "../assets/particles/rest.png";
 import flat from "../assets/particles/flat.png";
 import sharp from "../assets/particles/sharp.png";
+import { KeyPreset } from "./tmp/reactpiano_fix";
 const musicalNoteImages = [eth, sharp, qt, flat, rest, sxth];
 
 const ParticleBackground = () => {
@@ -26,7 +33,7 @@ const ParticleBackground = () => {
           },
         },
         number: {
-          value: 25,
+          value: 12,
           limit: 100,
         },
         opacity: {
@@ -88,7 +95,47 @@ const ParticleBackground = () => {
   const particlesInit = useCallback((engine: Engine) => {
     return loadSlim(engine);
   }, []);
-  return <Particles id="tsparticles" init={particlesInit} options={options} />;
+
+  const containerRef = useRef<Container | undefined>(undefined);
+
+  const particlesLoaded = useCallback(
+    async (container: Container | undefined): Promise<void> => {
+      containerRef.current = container;
+    },
+    []
+  );
+
+  useEffect(() => {
+    const handleKeyPress = (event: KeyboardEvent) => {
+      if (!containerRef.current) return;
+      if (event.ctrlKey || event.metaKey || event.shiftKey) {
+        return;
+      }
+      if (
+        KeyPreset.some(
+          (item) =>
+            item.natural == event.key ||
+            item.flat == event.key ||
+            item.sharp == event.key
+        )
+      ) {
+        containerRef.current.particles.push(Math.random() < 0.1 ? 1 : 0);
+      }
+    };
+    window.addEventListener("keydown", handleKeyPress);
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, []);
+
+  return (
+    <Particles
+      id="tsparticles"
+      init={particlesInit}
+      loaded={particlesLoaded}
+      options={options}
+    />
+  );
 };
 
 export default ParticleBackground;
