@@ -119,7 +119,7 @@ export default function Template() {
                 Paper coming soon
               </Button>
               <a
-                href="https://github.com/Bmoist/MaskedExpressiveness"
+                href="https://github.com/lynnzYe/MaskedExpressiveness"
                 target="_blank"
                 rel="noopener noreferrer"
               >

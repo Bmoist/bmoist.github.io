@@ -68,7 +68,7 @@ export default function ChordSense() {
                 Paper coming soon
               </Button>
               <a
-                href="https://github.com/Bmoist/MaskedExpressiveness"
+                href="https://github.com/lynnzYe/MaskedExpressiveness"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -203,7 +203,7 @@ export default function ChordSense() {
           <p className="text-gray-600">
             A text-based interactive demo is provided in the{" "}
             <a
-              href="https://github.com/Bmoist/ChordSense"
+              href="https://github.com/lynnzYe/ChordSense"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: "#7e83f8" }}
