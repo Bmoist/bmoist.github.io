@@ -52,31 +52,31 @@ export function createKeyboardShortcuts(
 }
 
 // Preset configurations
-const BOTTOM_ROW = [
-  { natural: "z", flat: "a", sharp: "s" },
-  { natural: "x", flat: "s", sharp: "d" },
-  { natural: "c", flat: "d", sharp: "f" },
-  { natural: "v", flat: "f", sharp: "g" },
-  { natural: "b", flat: "g", sharp: "h" },
-  { natural: "n", flat: "h", sharp: "j" },
-  { natural: "m", flat: "j", sharp: "k" },
-  { natural: ",", flat: "k", sharp: "l" },
-  { natural: ".", flat: "l", sharp: ";" },
-  { natural: "/", flat: ";", sharp: "'" },
-];
-const HOME_ROW = [
-  { natural: "a", flat: "q", sharp: "w" },
-  { natural: "s", flat: "w", sharp: "e" },
-  { natural: "d", flat: "e", sharp: "r" },
-  { natural: "f", flat: "r", sharp: "t" },
-  { natural: "g", flat: "t", sharp: "y" },
-  { natural: "h", flat: "y", sharp: "u" },
-  { natural: "j", flat: "u", sharp: "i" },
-  { natural: "k", flat: "i", sharp: "o" },
-  { natural: "l", flat: "o", sharp: "p" },
-  { natural: ";", flat: "p", sharp: "[" },
-  { natural: "'", flat: "[", sharp: "]" },
-];
+// const BOTTOM_ROW = [
+//   { natural: "z", flat: "a", sharp: "s" },
+//   { natural: "x", flat: "s", sharp: "d" },
+//   { natural: "c", flat: "d", sharp: "f" },
+//   { natural: "v", flat: "f", sharp: "g" },
+//   { natural: "b", flat: "g", sharp: "h" },
+//   { natural: "n", flat: "h", sharp: "j" },
+//   { natural: "m", flat: "j", sharp: "k" },
+//   { natural: ",", flat: "k", sharp: "l" },
+//   { natural: ".", flat: "l", sharp: ";" },
+//   { natural: "/", flat: ";", sharp: "'" },
+// ];
+// const HOME_ROW = [
+//   { natural: "a", flat: "q", sharp: "w" },
+//   { natural: "s", flat: "w", sharp: "e" },
+//   { natural: "d", flat: "e", sharp: "r" },
+//   { natural: "f", flat: "r", sharp: "t" },
+//   { natural: "g", flat: "t", sharp: "y" },
+//   { natural: "h", flat: "y", sharp: "u" },
+//   { natural: "j", flat: "u", sharp: "i" },
+//   { natural: "k", flat: "i", sharp: "o" },
+//   { natural: "l", flat: "o", sharp: "p" },
+//   { natural: ";", flat: "p", sharp: "[" },
+//   { natural: "'", flat: "[", sharp: "]" },
+// ];
 const QWERTY_ROW = [
   { natural: "q", flat: "1", sharp: "2" },
   { natural: "w", flat: "2", sharp: "3" },
@@ -102,11 +102,11 @@ const config = {
   keyboardShortcutOffset: 6,
 };
 
-const keyboardShortcuts = createKeyboardShortcuts(
-  config.noteRange.first + config.keyboardShortcutOffset,
-  config.noteRange.last + config.keyboardShortcutOffset,
-  QWERTY_ROW
-);
+// const keyboardShortcuts = createKeyboardShortcuts(
+//   config.noteRange.first + config.keyboardShortcutOffset,
+//   config.noteRange.last + config.keyboardShortcutOffset,
+//   QWERTY_ROW
+// );
 
 export function createKeyPreset() {
   return createKeyboardShortcuts(
