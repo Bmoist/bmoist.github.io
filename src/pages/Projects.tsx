@@ -28,7 +28,7 @@ const Projects: React.FC<ProjectProps> = ({ projects }) => {
     const updateFontSize = () => {
       if (cardRef.current) {
         const cardWidth = cardRef.current.offsetWidth;
-        setFontSize(cardWidth * 0.06);
+        setFontSize(cardWidth * 0.05);
       }
     };
     const updateContainerSize = () => {

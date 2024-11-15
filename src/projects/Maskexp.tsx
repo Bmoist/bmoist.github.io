@@ -199,8 +199,13 @@ export default function MaskExp() {
             {/* Authors */}
             <div className="space-y-2">
               <p className="text-lg text-blue-600">
-                <a href="#" className="hover:underline">
-                  Linzan Ye
+                <a
+                  href="https://github.com/lynnzYe"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  Linzan Ye<sup>*</sup>
                 </a>
               </p>
 

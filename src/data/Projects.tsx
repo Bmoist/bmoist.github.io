@@ -3,6 +3,7 @@ import maskexp from "./maskexp.png";
 // import dummyIcon from "./dmy.png";
 import et from "./et.png";
 import chordsense from "./chordsense.png";
+import pico from './pico.webp'
 
 const p1: Project = {
   id: 1,
@@ -24,6 +25,15 @@ const p2: Project = {
 
 const p3: Project = {
   id: 3,
+  img: pico,
+  title: "Piano Conductor",
+  brief:
+    "Create artful piano performances by touch signals. Unleash your creative potential with minimal technical distractions.",
+  link: "/proj/pico",
+};
+
+const p4: Project = {
+  id: 3,
   img: et,
   title: "Extraterrestrial Vistor",
   brief:
@@ -31,4 +41,4 @@ const p3: Project = {
   link: "/proj/etvisitor",
 };
 
-export const projs = [p1, p2, p3];
+export const projs = [p1, p2, p3, p4];
