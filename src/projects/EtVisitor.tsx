@@ -16,7 +16,7 @@ export default function EtVisitor() {
             <div className="space-y-2">
               <p className="text-lg text-blue-600">
                 <a
-                  href="https://github.com/bmoist"
+                  href="https://github.com/lynnzYe"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:underline"

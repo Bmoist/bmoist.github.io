@@ -37,8 +37,13 @@ export default function ChordSense() {
             {/* Authors */}
             <div className="space-y-2">
               <p className="text-lg text-blue-600">
-                <a href="#" className="hover:underline">
-                  Linzan Ye
+                <a
+                  href="https://github.com/lynnzYe"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  Linzan Ye<sup>*</sup>
                 </a>
               </p>
 
@@ -68,7 +73,7 @@ export default function ChordSense() {
                 Paper coming soon
               </Button>
               <a
-                href="https://github.com/Bmoist/MaskedExpressiveness"
+                href="https://github.com/lynnzYe/chordsense"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -203,7 +208,7 @@ export default function ChordSense() {
           <p className="text-gray-600">
             A text-based interactive demo is provided in the{" "}
             <a
-              href="https://github.com/Bmoist/ChordSense"
+              href="https://github.com/lynnzYe/ChordSense"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: "#7e83f8" }}

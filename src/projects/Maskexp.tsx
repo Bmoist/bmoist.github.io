@@ -199,8 +199,13 @@ export default function MaskExp() {
             {/* Authors */}
             <div className="space-y-2">
               <p className="text-lg text-blue-600">
-                <a href="#" className="hover:underline">
-                  Linzan Ye
+                <a
+                  href="https://github.com/lynnzYe"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  Linzan Ye<sup>*</sup>
                 </a>
               </p>
 
@@ -230,7 +235,7 @@ export default function MaskExp() {
                 Paper coming soon
               </Button>
               <a
-                href="https://github.com/Bmoist/MaskedExpressiveness"
+                href="https://github.com/lynnzYe/MaskedExpressiveness"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -410,7 +415,7 @@ export default function MaskExp() {
             For interested readers, the code for interactive demo is available
             in the{"  "}
             <a
-              href="https://github.com/Bmoist/MaskedExpressiveness"
+              href="https://github.com/lynnzYe/MaskedExpressiveness"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: "#7e83f8" }}
