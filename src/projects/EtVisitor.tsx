@@ -74,7 +74,7 @@ export default function EtVisitor() {
               patterns. In this way, we expect that the music will sound like
               gradually alternating between tonal and microtonal intervals. To
               strengthen the consonant feelings during those intervals, we added
-              additional frequences that form harmonies together. The latter
+              additional frequencies that form harmonies together. The latter
               half of the piece is treated similarly, except that the two lines
               cross each other in the middle, and different instrumentations are
               used.
