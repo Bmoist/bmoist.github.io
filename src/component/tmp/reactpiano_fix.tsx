@@ -78,6 +78,10 @@ export function createKeyboardShortcuts(
 //   { natural: "'", flat: "[", sharp: "]" },
 // ];
 const QWERTY_ROW = [
+  { natural: "z", flat: "a", sharp: "s" },
+  { natural: "x", flat: "s", sharp: "d" },
+  { natural: "c", flat: "d", sharp: "v" },
+  { natural: "v", flat: "c", sharp: "1" },
   { natural: "q", flat: "1", sharp: "2" },
   { natural: "w", flat: "2", sharp: "3" },
   { natural: "e", flat: "3", sharp: "4" },
@@ -91,6 +95,10 @@ const QWERTY_ROW = [
   { natural: "[", flat: "-", sharp: "=" },
   { natural: "]", flat: "=", sharp: "Backspace" },
   { natural: "\\", flat: "Backspace", sharp: "" },
+  { natural: "m", flat: "\\", sharp: "k" },
+  { natural: ",", flat: "k", sharp: "l" },
+  { natural: ".", flat: "l", sharp: ";" },
+  { natural: "/", flat: ";", sharp: "'" },
 ];
 
 const config = {
@@ -99,7 +107,7 @@ const config = {
     first: 48,
     last: 83,
   },
-  keyboardShortcutOffset: 6,
+  keyboardShortcutOffset: 0,
 };
 
 // const keyboardShortcuts = createKeyboardShortcuts(
