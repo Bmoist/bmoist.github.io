@@ -72,7 +72,6 @@ export default function PiCo() {
               className=" h-[300px] object-cover"
             />
           </div>
-
           {/* Abstract Section - Placeholder */}
           <section className="prose prose-gray max-w-none">
             <h2 className="text-2xl font-bold pb-1">Background</h2>
@@ -83,16 +82,10 @@ export default function PiCo() {
               take this further and create an "air piano". I envision a future
               where the technical challenges of piano playing becomes less of a
               barrier for both amateurs and professionals to express their
-              interpretations of musical compositions. As early as in the 1970s,
-              Max Matthews came up with the idea of "radio baton". Since the
-              pitch information is explicitly encoded in most musical scores,
-              one can ask computers to memorize it, leaving the performer to
-              focus on controlling the rhythm, speed, volume, pattern, and
-              timbre of the sound. With recent advancements in artificial
-              intelligence, I am motivated to dream bigger. Instead of having
-              users to manipulate all the expressive parameters at once, which
-              can be overwhelming, why not have AI infer the appropriate
-              expressive parameters from the main contour that users provide?
+              interpretations of musical compositions. Instead of having users
+              to manipulate all the expressive parameters at once, which can be
+              overwhelming, why not have AI infer the appropriate expressive
+              parameters from the main contour that users provide?
             </p>
           </section>
           {/* Method Section */}
@@ -100,22 +93,48 @@ export default function PiCo() {
             <h2 className="text-2xl font-bold pb-5">
               Proof-of-Concept Interactive Demo
             </h2>
-            <p className="text-gray-600 pb-5">
-              The code for interactive demo is provided in the github repo.
-              Given a predetermined note sequence, the program synthesizes a
-              performance based on the onset, offset, and velocity information
-              provided by the user through a MIDI device. Users only need to
-              know the melody and rhythm, and then tap accordingly to produce
-              the performance.
+            <h2 className="text-1xl font-bold pb-5">
+              Demo - Let's perform with Horowitz!
+            </h2>
+            <div className="flex justify-center items-center rounded-lg pb-5">
+              <div
+                style={{
+                  position: "relative",
+                  paddingBottom: "56.25%",
+                  height: 0,
+                  width: "100%",
+                }}
+              >
+                <iframe
+                  src="https://youtube.com/embed/Z_S5JFsfhEQ"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    borderRadius: "0.5rem",
+                  }}
+                />
+              </div>
+            </div>
+            <blockquote className="text-gray-600 text-sm pb-5">
+              - Opening excerpt from Schubert's Op. 90 No. 3
+            </blockquote>
+            <p className="text-gray-600 pb-10">
+              In the above demo, the Conducting system loads a Horowitz's
+              performance of Schubert's Gb Impromptu. The users are then
+              expected to tap the main melody line while Horowitz "accompanies"
+              you based on your performed tempo.
               <br />
               <br />
-              The goal is to enable users to expressively perform a piece
-              without spending hours learning it. Currently, the demo requires
-              users to perform on MIDI keyboards, but designing
-              pressure-sensitive desks and gloves to capture touch signals could
-              eventually allow users to play anywhere, anytime, with reduced
-              risk of accidentally triggering notes during a performance.
             </p>
+            <h2 className="text-1xl font-bold pb-5">
+              Demo - Let's play Schubert just by tapping!
+            </h2>
             <div className="flex justify-center items-center rounded-lg pb-5">
               <div
                 style={{
@@ -142,14 +161,29 @@ export default function PiCo() {
               </div>
             </div>
             <blockquote className="text-gray-600 text-sm pb-5">
-              The performed melody is the opening excerpt from Schubert's Op.
-              142.
+              - Opening melody excerpt from Schubert's Op. 142 No. 3
             </blockquote>
+            <p className="text-gray-600 pb-5">
+              The code for interactive demo is provided in the github repo.
+              Given a predetermined note sequence, the program synthesizes a
+              performance based on the onset, offset, and velocity information
+              provided by the user through a MIDI device. Users only need to
+              know the rhythm, and then tap accordingly to produce the
+              performance.
+              <br />
+              <br />
+              The goal is to enable users to expressively perform a piece
+              without spending hours learning it. Currently, the demo requires
+              users to perform on MIDI keyboards, but designing
+              pressure-sensitive desks or gloves to capture touch signals could
+              eventually allow users to play anywhere, anytime, with reduced
+              risk of accidentally triggering other notes during a performance.
+            </p>
             <p className="text-gray-600">
-              While the current demo works only with a predefined monophonic
-              note sequence and synthesizes sound solely when the user sends a
-              touch signal, it could be enhanced with an automatic expressive
-              accompaniment system to create a full, expressive performance.
+              While the current demo only utilizes simple interpolations for
+              velocity and timing decisions, it could be enhanced with an
+              automatic expressive accompaniment system to create a full,
+              expressive performance.
               <br />
               <br />
               Another project of mine,{" "}
@@ -162,18 +196,19 @@ export default function PiCo() {
               >
                 Masked Expressiveness
               </a>
-              , focuses on adding expressiveness based on user input signals.
+              , worked on adding expressiveness based on user input signals.
               <br />
               <br />
               I envision creating the ultimate version of Piano Conductor,
               allowing users to artfully perform pieces like Chopin's Nocturnes
-              with nuanced rubatos and voicings—and even apply performance style
+              with nuanced rubatos and voicings—and apply performance style
               transfers from friends or legendary pianists.
               <br />
               <br />
               With the fully realized Piano Conductor, users would have the
               freedom to focus deeply on shaping their musical interpretations
-              and bringing them to life in real time.
+              and bringing them to life in real time, instead of bothering about
+              the technical hurdles during performance.
             </p>
           </section>
         </div>
