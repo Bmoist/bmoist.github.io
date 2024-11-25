@@ -7,7 +7,12 @@ import React, {
 } from "react";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
-import { Container, Engine, ISourceOptions } from "tsparticles-engine";
+import {
+  Container,
+  Engine,
+  ISourceOptions,
+  IMouseData,
+} from "tsparticles-engine";
 
 import eth from "../assets/particles/8th.png";
 import sxth from "../assets/particles/16th.png";
@@ -21,27 +26,35 @@ const musicalNoteImages = [eth, sharp, qt, flat, rest, sxth];
 const ParticleBackground = () => {
   const options: ISourceOptions = useMemo(() => {
     return {
+      fullScreen: {
+        enable: true,
+        zIndex: -1,
+      },
       particles: {
         move: {
           enable: true,
           speed: { min: 0.2, max: 1 },
           direction: "top",
-          random: true,
+          random: false,
           straight: false,
           outModes: {
             default: "out",
+            bottom: "none",
+            top: "destroy",
           },
         },
         number: {
-          value: 12,
-          limit: 100,
+          value: 20,
+          limit: 300,
         },
         opacity: {
-          value: 0.4,
+          value: 0.5,
           animation: {
             enable: true,
-            speed: 1, // Speed at which opacity changes
-            minimumValue: 0.1,
+            speed: 0.4, // Speed at which opacity changes
+            minimumValue: 0,
+            sync: false,
+            destroy: "min",
           },
         },
         size: {
@@ -51,6 +64,7 @@ const ParticleBackground = () => {
             enable: true,
             speed: 5, // Speed of size animation (bigger or smaller)
             minimumValue: 10,
+            sync: false,
           },
         },
         shape: {
@@ -60,10 +74,19 @@ const ParticleBackground = () => {
             width: 100,
             height: 100,
           })),
-          circle: {},
         },
         color: {
           value: ["#FF5733", "#33FF57", "#3357FF", "#F3FF33", "#FF33A6"],
+        },
+        emitters: {
+          life: {
+            count: 0,
+            duration: 0,
+          },
+          rate: {
+            delay: 0,
+            quantity: 0,
+          },
         },
       },
 
@@ -105,10 +128,14 @@ const ParticleBackground = () => {
     []
   );
 
+  const pressedKeys = useRef(new Set<string>());
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
       if (!containerRef.current) return;
       if (event.ctrlKey || event.metaKey || event.shiftKey) {
+        return;
+      }
+      if (pressedKeys.current.has(event.key)) {
         return;
       }
       if (
@@ -119,12 +146,33 @@ const ParticleBackground = () => {
             item.sharp == event.key
         )
       ) {
-        containerRef.current.particles.push(Math.random() < 0.1 ? 1 : 0);
+        pressedKeys.current.add(event.key);
+        const container = containerRef.current;
+        const canvasHeight = container.canvas.size.height;
+        const imouse_data: IMouseData = {
+          clicking: false,
+          inside: true,
+          position: {
+            x: Math.random() * container.canvas.size.width,
+            y: canvasHeight * 0.96,
+          },
+        };
+        containerRef.current.particles.push(
+          Math.random() < 0.9 ? 1 : 0,
+          imouse_data
+        );
       }
     };
+    const handleKeyUp = (event: KeyboardEvent) => {
+      pressedKeys.current.delete(event.key);
+    };
+
     window.addEventListener("keydown", handleKeyPress);
+    window.addEventListener("keyup", handleKeyUp);
+
     return () => {
       window.removeEventListener("keydown", handleKeyPress);
+      window.addEventListener("keyup", handleKeyUp);
     };
   }, []);
 
