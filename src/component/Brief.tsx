@@ -1,5 +1,6 @@
 import { useWindowSize } from "../hooks/Window";
 import { getTitlePosY } from "./PianoFrame";
+import SocialLinks from "./SocialLinks";
 
 const Brief = () => {
   const linePos = useWindowSize();
@@ -24,6 +25,7 @@ const Brief = () => {
         <span style={{ fontWeight: "lighter" }}>Ye</span>
       </p>
       <p
+        className="pb-5"
         style={{
           color: "black",
           paddingTop: linePos.x2 * 0.1,
@@ -43,6 +45,11 @@ const Brief = () => {
           <i>"Music as moments of transcendence"</i>
         </span>
       </p>
+      <SocialLinks
+        twitterUrl="https://x.com/0Kurono_0"
+        githubUrl="https://github.com/lynnzye/"
+        emailAddress="kurono_s@outlook.com"
+      />
     </div>
   );
 };

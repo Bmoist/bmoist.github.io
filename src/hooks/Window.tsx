@@ -12,13 +12,15 @@ export const useWindowSize = () => {
   const [linePos, setLineEnd] = useState<LinePos>({
     x1: 0,
     y1: 0,
-    x2: Math.min(window.innerWidth, window.screen.width),
+    x2: window.innerWidth,
+    // Math.min(window.innerWidth, window.screen.width),
     y2: window.innerHeight,
   });
 
   useEffect(() => {
     const handleWindowChange = throttle(() => {
-      const pianoWidth = Math.min(window.innerWidth, window.screen.width);
+      const pianoWidth = window.innerWidth;
+      // Math.min(window.innerWidth, window.screen.width);
       const scrollY = window.scrollY;
       const newX = pianoWidth;
       setLineEnd({
