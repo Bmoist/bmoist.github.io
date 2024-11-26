@@ -126,14 +126,39 @@ export default function PiCo() {
             </blockquote>
             <p className="text-gray-600 pb-10">
               In the above demo, the Conducting system loads a Horowitz's
-              performance of Schubert's Gb Impromptu. The users are then
-              expected to tap the main melody line while Horowitz "accompanies"
-              you based on your performed tempo.
+              performance of Schubert's Gb Impromptu. The user is then expected
+              to tap the main melody line while Horowitz "accompanies" you based
+              on your performed tempo.
+              <br />
+              <br />
+              <h3 className="text-1xl font-bold">Features</h3>
+              <br />
+              <ul className="list-decimal pl-5">
+                <li className="pb-2">
+                  <u>Play by Tapping</u>: You only need to control the timing
+                  and MIDI velocity by tapping any keys on a MIDI keyboard -{" "}
+                  <b>
+                    {" "}
+                    no need to worry about hitting wrong notes or learning a
+                    notated score!
+                  </b>
+                </li>
+                <li className="pb-2">
+                  <u>Adaptive BPM/velocity Prediction</u>: The system can{" "}
+                  <b>automatically adjust</b> the tempo and MIDI velocity
+                  according to your performance, <b>in real-time</b>.
+                </li>
+                <li className="pb-2">
+                  <u>Learning from Rehearsal Data</u>: You can use your{" "}
+                  <b>past performance as a hint</b> for the system to more
+                  accurately predict your tempo.
+                </li>
+              </ul>
               <br />
               <br />
             </p>
             <h2 className="text-1xl font-bold pb-5">
-              Demo - Let's play Schubert just by tapping!
+              Demo - Let's play a melody by tapping!
             </h2>
             <div className="flex justify-center items-center rounded-lg pb-5">
               <div
@@ -186,7 +211,7 @@ export default function PiCo() {
               expressive performance.
               <br />
               <br />
-              Another project of mine,{" "}
+              One of my other projects,{" "}
               <a
                 href="https://lynnzye.github.io/#/proj/maskexp"
                 target="_blank"
@@ -201,8 +226,9 @@ export default function PiCo() {
               <br />
               I envision creating the ultimate version of Piano Conductor,
               allowing users to artfully perform pieces like Chopin's Nocturnes
-              with nuanced rubatos and voicings—and apply performance style
-              transfers from friends or legendary pianists.
+              with nuanced rubatos and voicings just by tapping, anywhere and
+              anytime—and apply performance style transfers from friends or
+              legendary pianists.
               <br />
               <br />
               With the fully realized Piano Conductor, users would have the

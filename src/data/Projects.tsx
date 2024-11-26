@@ -1,6 +1,7 @@
 import { Project } from "../pages/Projects";
 import maskexp from "./maskexp.png";
 // import dummyIcon from "./dmy.png";
+import dpf from "./dpf.jpeg";
 import et from "./et.png";
 import chordsense from "./chordsense.png";
 import pico from "./pico.webp";
@@ -51,4 +52,13 @@ const p1: Project = {
   link: "/proj/etvisitor",
 };
 
-export const projs = [p5, p4, p3, p2, p1];
+const p0: Project = {
+  id: 3,
+  img: dpf,
+  title: "Vnomics - DPF Failure Prediction",
+  brief:
+    "We used autoencoder's reconstruction loss to differentiate between working and failing filters to predict DPF failure. \nI was responsible for the model setup and hyperparameter tuning.",
+  link: "https://github.com/mtaruno/vnomics",
+};
+
+export const projs = [p5, p4, p3, p2, p1, p0];
