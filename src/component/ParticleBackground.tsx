@@ -51,7 +51,7 @@ const ParticleBackground = () => {
           value: 0.5,
           animation: {
             enable: true,
-            speed: 0.4, // Speed at which opacity changes
+            speed: 0.1, // Speed at which opacity changes
             minimumValue: 0,
             sync: false,
             destroy: "min",
@@ -154,7 +154,7 @@ const ParticleBackground = () => {
           inside: true,
           position: {
             x: Math.random() * container.canvas.size.width,
-            y: canvasHeight * 0.96,
+            y: canvasHeight * 1.05,
           },
         };
         containerRef.current.particles.push(
